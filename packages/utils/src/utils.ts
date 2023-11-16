@@ -1,0 +1,1 @@
+export const noOfMoves = (moves:any): number => moves.length;
