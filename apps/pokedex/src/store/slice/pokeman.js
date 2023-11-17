@@ -1,32 +1,3 @@
-// import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// const API_URL = "https://pokeapi.co/api/v2/pokemon";
-
-// export const fetchPokemans = createAsyncThunk("fetchAllPokemans", async () => {
-//   const response = await fetch(`${API_URL}`);
-//   return response.json();
-// });
-// const pokemanSlice = createSlice({
-//   name: "pokeman",
-//   initialState: {
-//     staus: 'idle',
-//     data: undefined,
-//     isError: false,
-//   },
-//   extraReducers: (builder) => {
-//     builder.addCase(fetchPokemans.pending, (state, action) => {
-//       state.sattus = 'Loading';
-//     });
-//     builder.addCase(fetchPokemans.fulfilled, (state, action) => {
-//       state.status = 'Suceeded';
-//       state.data = action.payload;
-//     });
-//     builder.addCase(fetchPokemans.rejected, (state, action) => {
-//       state.status = 'Failed';
-//     });
-//   },
-// });
-// export default pokemanSlice.reducer;
-
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const fetchPokemonData = createAsyncThunk(
