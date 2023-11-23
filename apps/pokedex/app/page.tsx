@@ -1,18 +1,15 @@
 "use client";
 import React from "react";
 import PokemonDataGrid from "./PokemonDataGrid/PokemonDataGrid";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPokemonData } from "./Redux/pokemonSlice";
 import { AppDispatch } from "./Redux/store";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   const dispatch = useDispatch<AppDispatch>();
   const { status, data, error } = useSelector((state: any) => state.pokemon);
-  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
     if (status === "idle") {
       dispatch(fetchPokemonData());
     }
@@ -27,7 +24,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div>
       <PokemonDataGrid pokemans={data.results} />
     </div>
   );

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 // import { useNavigate } from "react-router-dom";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 
@@ -17,6 +18,7 @@ interface Props {
 const PokemonDataGrid: React.FC<Props> = ({ pokemans }) => {
   // const history = useNavigate();
   const pokemonData = pokemans;
+  const router = useRouter();
 
   const columns: GridColDef[] = [
     { field: "name", headerName: "Name", width: 150 },
@@ -25,7 +27,7 @@ const PokemonDataGrid: React.FC<Props> = ({ pokemans }) => {
   const handleRowClick = (params: any) => {
     const pokemonUrl = params.row.url;
     const pokemonId = parseInt(pokemonUrl.split("/").slice(-2, -1)[0], 10);
-    // history(`/pokemon/${pokemonId}`);
+    router.push(`/PokemonDetail/${pokemonId}`);
   };
 
   const rows = pokemonData.map((row: any, index: any) => ({
