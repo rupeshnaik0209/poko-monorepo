@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPokemonData } from "./Redux/pokemonSlice";
 import { AppDispatch } from "./Redux/store";
+import { DEFAULT_MIN_VERSION } from "tls";
 function App() {
   const dispatch = useDispatch<AppDispatch>();
   const { status, data, error } = useSelector((state: any) => state.pokemon);
@@ -24,7 +25,10 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="mt-10">
+      <div className="mb-10 flex justify-center text-xl font-bold">
+        LIST OF POKEMONS
+      </div>
       <PokemonDataGrid pokemans={data.results} />
     </div>
   );
