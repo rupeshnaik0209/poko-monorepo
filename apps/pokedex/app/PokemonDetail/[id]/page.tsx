@@ -22,14 +22,20 @@ const PokemonDetail = ({ params }: any) => {
   }
 
   return (
-    <div className="flex flex-col content-center justify-self-center items-center">
+    <div className="flex flex-col content-center justify-self-center items-center mt-16 gap-y-2 bg-orange-200">
       <PokoCard pokeMon={pokemon} />
-      No of moves :- {noOfMoves(pokemon.moves)}
       <h3>Height : {pokemon.height}</h3>
+      No of moves :- {noOfMoves(pokemon.moves)}
       <h2>List of moves -</h2>
-      <ul style={{ listStyleType: "none" }}>
+      <ul
+        className="grid grid-flow-row-dense grid-cols-4 grid-rows-3 gap-4"
+        style={{ listStyleType: "none" }}
+      >
         {pokemon.moves.map((move: any) => (
-          <li key={move.name} className="bg-gray-400 mt-4">
+          <li
+            key={move.name}
+            className="flex bg-white mt-4 w-40 h-10 items-center self-center place-content-center capitalize hover:uppercase"
+          >
             {move.move.name}
           </li>
         ))}
