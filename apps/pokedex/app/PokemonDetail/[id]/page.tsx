@@ -22,7 +22,7 @@ const PokemonDetail = ({ params }: any) => {
   }
 
   return (
-    <div className="flex flex-col content-center justify-self-center items-center mt-16 gap-y-2 bg-orange-200">
+    <div className="flex flex-col content-center justify-self-center items-center mt-16 gap-y-2">
       <PokoCard pokeMon={pokemon} />
       <h3>Height : {pokemon.height}</h3>
       No of moves :- {noOfMoves(pokemon.moves)}
@@ -34,7 +34,7 @@ const PokemonDetail = ({ params }: any) => {
         {pokemon.moves.map((move: any) => (
           <li
             key={move.name}
-            className="flex bg-white mt-4 w-40 h-10 items-center self-center place-content-center capitalize hover:uppercase"
+            className="flex bg-white mt-4 w-40 h-10 items-center self-center place-content-center capitalize hover:uppercase hover:bg-cyan-300 rounded-md"
           >
             {move.move.name}
           </li>
