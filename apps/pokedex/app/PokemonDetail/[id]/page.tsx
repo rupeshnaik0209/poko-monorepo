@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { PokoCard } from "components";
 import { noOfMoves } from "utils";
-const API_URL = "https://pokeapi.co/api/v2/pokemon";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 interface move {
   name: string;

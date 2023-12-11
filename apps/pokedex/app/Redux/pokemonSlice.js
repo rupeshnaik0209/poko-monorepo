@@ -1,10 +1,12 @@
 "use client";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 const fetchPokemonData = createAsyncThunk(
   "pokeman/fetchPokemonData",
   async () => {
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon");
+    const response = await fetch(API_URL);
     const data = await response.json();
     return data;
   },
