@@ -22,24 +22,30 @@ const PokemonDetail = ({ params }: any) => {
   }
 
   return (
-    <div className="flex flex-col content-center justify-self-center items-center mt-16 gap-y-2">
-      <PokoCard pokeMon={pokemon} />
-      <h3>Height : {pokemon.height}</h3>
-      No of moves :- {noOfMoves(pokemon.moves)}
-      <h2>List of moves -</h2>
-      <ul
-        className="grid grid-flow-row-dense grid-cols-4 grid-rows-3 gap-4"
-        style={{ listStyleType: "none" }}
-      >
-        {pokemon.moves.map((move: any) => (
-          <li
-            key={move.name}
-            className="flex bg-white mt-4 w-40 h-10 items-center self-center place-content-center capitalize hover:uppercase hover:bg-cyan-300 rounded-md"
-          >
-            {move.move.name}
-          </li>
-        ))}
-      </ul>
+    <div className="flex flex-col content-center justify-self-center items-center mt-16 gap-y-2 text-white-700">
+      <div className="flex flex-col grow place-content-between bg-rose-700 w-8/12 h-24 p-4 rounded-md">
+        <PokoCard pokeMon={pokemon} />
+        <h3>Height : {pokemon.height}</h3>
+        No of moves :- {noOfMoves(pokemon.moves)}
+      </div>
+      <div className="bg-white m-4 p-4">
+        <h2 className="text-rose-700 font-mono decoration-solid decoration-4">
+          LIST OF MOVES -
+        </h2>
+        <ul
+          className="grid grid-cols-4 grid-rows-3 gap-4"
+          style={{ listStyleType: "none" }}
+        >
+          {pokemon.moves.map((move: any) => (
+            <li
+              key={move.name}
+              className="flex bg-rose-700 mt-4 w-40 h-10 items-center self-center place-content-center capitalize hover:uppercase rounded-md"
+            >
+              {move.move.name}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
