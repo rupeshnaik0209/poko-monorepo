@@ -10,9 +10,12 @@
     "apps/*"
   ],
   "scripts": {
-    "build": "yarn workspaces run build"
+    "build": "yarn workspaces run build",
+    "lerna-dockerize": "lerna-dockerize"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lerna-dockerize": "^1.0.9"
+  },
   "devDependencies": {
     "lerna": "^7.4.2"
   }
