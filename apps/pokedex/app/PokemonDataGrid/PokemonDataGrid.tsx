@@ -21,7 +21,12 @@ const PokemonDataGrid: React.FC<Props> = ({ pokemans }) => {
   const router = useRouter();
 
   const columns: GridColDef[] = [
-    { field: "name", headerName: "Name", width: 150 },
+    {
+      field: "name",
+      headerName: "Name",
+      width: 300,
+      headerClassName: "super-app-theme--header",
+    },
   ];
 
   const handleRowClick = (params: any) => {
@@ -41,6 +46,20 @@ const PokemonDataGrid: React.FC<Props> = ({ pokemans }) => {
       <DataGrid
         rows={rows}
         columns={columns}
+        sx={{
+          border: 2,
+          borderColor: "primary.light",
+          backgroundColor: "rgba(255, 7, 0, 0.55)",
+          "& .MuiDataGrid-cell:hover": {
+            color: "primary.main",
+          },
+          ".MuiDataGrid-columnSeparator": {
+            display: "none",
+          },
+          "&.MuiDataGrid-root": {
+            border: "none",
+          },
+        }}
         autoPageSize
         onRowClick={handleRowClick}
       />
