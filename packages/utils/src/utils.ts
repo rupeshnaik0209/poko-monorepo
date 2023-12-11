@@ -1,1 +1,2 @@
-export const noOfMoves = (moves:any): number => moves.length;
+export const noOfMoves = (moves: Array<{ move: { name: string } }>): number =>
+  moves.length;

@@ -1,7 +1,11 @@
 import React from "react";
 
+interface pokeMonType {
+  name: string;
+}
+
 interface PokoCardProps {
-  pokeMon: any;
+  pokeMon: pokeMonType;
 }
 
 const PokoCard: React.FC<PokoCardProps> = ({ pokeMon }) => {

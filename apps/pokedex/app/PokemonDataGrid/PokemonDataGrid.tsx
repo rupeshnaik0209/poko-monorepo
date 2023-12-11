@@ -4,18 +4,24 @@ import { useRouter } from "next/navigation";
 // import { useNavigate } from "react-router-dom";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 
-interface Pokeman {
+interface row {
+  name: string;
+  url: string;
+}
+
+export interface PokemanType {
   id: string;
   name: string;
+  url: string;
 }
 
-interface Pokemans extends Array<Pokeman> {}
+export interface PokemansType extends Array<PokemanType> {}
 
 interface Props {
-  pokemans: Pokemans;
+  pokemans: PokemansType;
 }
 
-const PokemonDataGrid: React.FC<Props> = ({ pokemans }) => {
+const PokemonDataGrid: React.FC<Props> = ({ pokemans }: Props) => {
   // const history = useNavigate();
   const pokemonData = pokemans;
   const router = useRouter();
@@ -29,13 +35,13 @@ const PokemonDataGrid: React.FC<Props> = ({ pokemans }) => {
     },
   ];
 
-  const handleRowClick = (params: any) => {
+  const handleRowClick = (params: { row: row }) => {
     const pokemonUrl = params.row.url;
     const pokemonId = parseInt(pokemonUrl.split("/").slice(-2, -1)[0], 10);
     router.push(`/PokemonDetail/${pokemonId}`);
   };
 
-  const rows = pokemonData.map((row: any, index: any) => ({
+  const rows = pokemonData.map((row: PokemanType, index: number) => ({
     id: index + 1,
     name: row.name.toUpperCase(),
     url: row.url,
