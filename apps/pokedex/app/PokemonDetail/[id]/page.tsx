@@ -32,7 +32,6 @@ const PokemonDetail = ({ params }: { params: { id: number } }) => {
   if (!pokemon) {
     return <div suppressHydrationWarning={true}></div>;
   }
-  console.log("moves", pokemon.moves);
   return (
     <div className="flex flex-col content-center justify-self-center items-center mt-16 gap-y-2 text-white-700">
       <div className="flex flex-col grow place-content-between bg-rose-700 w-8/12 h-24 p-4 rounded-md">
