@@ -2,13 +2,11 @@
 import React from "react";
 import PokemonDataGrid, {
   PokemansType,
-  PokemanType,
 } from "./PokemonDataGrid/PokemonDataGrid";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPokemonData } from "./Redux/pokemonSlice";
 import { AppDispatch } from "./Redux/store";
-import { DEFAULT_MIN_VERSION } from "tls";
 
 // interface Pokemon {
 //   name: string;
