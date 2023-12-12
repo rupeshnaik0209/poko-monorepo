@@ -2,13 +2,9 @@
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "skipLibCheck": true,
     "outDir": "./dist",
     "baseUrl": "./app",
@@ -26,18 +22,10 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "pokodex": [
-        "../../apps/pokedex/app/*"
-      ],
-      "components": [
-        "../../packages/components/src/*"
-      ],
-      "utils": [
-        "../../packages/utils/src/*"
-      ]
+      "@/*": ["./*"],
+      "pokodex": ["../../apps/pokedex/app/*"],
+      "components": ["../../packages/components/src/*"],
+      "utils": ["../../packages/utils/src/*"]
     }
   },
   "include": [
@@ -47,7 +35,5 @@
     "**/*.tsx",
     ".next/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
