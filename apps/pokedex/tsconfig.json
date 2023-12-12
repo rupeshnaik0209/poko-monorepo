@@ -4,7 +4,7 @@
     "module": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "skipLibCheck": true,
     "outDir": "./dist",
     "baseUrl": "./app",
@@ -26,6 +26,12 @@
       "pokodex": ["../../apps/pokedex/app/*"],
       "components": ["../../packages/components/src/*"],
       "utils": ["../../packages/utils/src/*"]
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "ESNext",
+      "moduleResolution": "Node"
     }
   },
   "include": [
