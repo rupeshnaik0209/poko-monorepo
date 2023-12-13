@@ -45,7 +45,7 @@ function App() {
   }
 
   return (
-    <div className="mt-10">
+    <div>
       <div className="mb-10 flex justify-center text-xl font-bold">
         LIST OF POKEMONS
       </div>
