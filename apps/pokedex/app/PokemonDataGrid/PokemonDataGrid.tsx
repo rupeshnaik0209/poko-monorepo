@@ -67,7 +67,7 @@ const PokemonDataGrid: React.FC<Props> = ({ pokemans }: Props) => {
       <DataGrid
         rows={rows}
         columns={columns}
-        sx={...datagridClasses}
+        sx={datagridClasses}
         autoPageSize
         onRowClick={handleRowClick}
       />
