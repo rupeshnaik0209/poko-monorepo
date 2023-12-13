@@ -35,6 +35,21 @@ const PokemonDataGrid: React.FC<Props> = ({ pokemans }: Props) => {
     },
   ];
 
+  const datagridClasses = {
+    border: 2,
+    borderColor: "primary.light",
+    backgroundColor: "rgba(255, 7, 0, 0.55)",
+    "& .MuiDataGrid-cell:hover": {
+      color: "primary.main",
+    },
+    ".MuiDataGrid-columnSeparator": {
+      display: "none",
+    },
+    "&.MuiDataGrid-root": {
+      border: "none",
+    },
+  };
+
   const handleRowClick = (params: { row: row }) => {
     const pokemonUrl = params.row.url;
     const pokemonId = parseInt(pokemonUrl.split("/").slice(-2, -1)[0], 10);
@@ -48,24 +63,11 @@ const PokemonDataGrid: React.FC<Props> = ({ pokemans }: Props) => {
   }));
 
   return (
-    <div style={{ height: 400, width: "100%" }}>
+    <div className="datagrid">
       <DataGrid
         rows={rows}
         columns={columns}
-        sx={{
-          border: 2,
-          borderColor: "primary.light",
-          backgroundColor: "rgba(255, 7, 0, 0.55)",
-          "& .MuiDataGrid-cell:hover": {
-            color: "primary.main",
-          },
-          ".MuiDataGrid-columnSeparator": {
-            display: "none",
-          },
-          "&.MuiDataGrid-root": {
-            border: "none",
-          },
-        }}
+        sx={...datagridClasses}
         autoPageSize
         onRowClick={handleRowClick}
       />
