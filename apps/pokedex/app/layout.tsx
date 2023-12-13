@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { StoreProvider } from "./Redux/StoreProvider";
+import Header from "./Header";
 
 export const metadata: Metadata = {
   title: "Nextjs App",
@@ -15,7 +16,14 @@ export default function RootLayout({
   return (
     <StoreProvider>
       <html lang="en">
-        <body className="bg-white">{children}</body>
+        <body className="bg-white-400">
+          <header>
+            <Header />
+          </header>
+          <main className="mr-16 ml-16 mb-16 mt-none shadow md:shadow-2xl p-6">
+            {children}
+          </main>
+        </body>
       </html>
     </StoreProvider>
   );
