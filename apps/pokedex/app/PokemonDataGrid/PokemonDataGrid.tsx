@@ -1,28 +1,14 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
-// import { useNavigate } from "react-router-dom";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
-
-interface row {
-  name: string;
-  url: string;
-}
-
-export interface PokemanType {
-  id: string;
-  name: string;
-  url: string;
-}
-
-export interface PokemansType extends Array<PokemanType> {}
+import { PokemanType, PokemansType, row } from "../PokemonTypes";
 
 interface Props {
   pokemans: PokemansType;
 }
 
 const PokemonDataGrid: React.FC<Props> = ({ pokemans }: Props) => {
-  // const history = useNavigate();
   const pokemonData = pokemans;
   const router = useRouter();
 

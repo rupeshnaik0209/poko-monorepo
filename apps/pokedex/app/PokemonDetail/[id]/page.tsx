@@ -2,19 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { PokoCard } from "components";
 import { noOfMoves } from "utils";
+import { move, pokemon } from "../../PokemonTypes";
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-interface move {
-  name: string;
-  move: { name: string };
-}
-interface moveTypes extends Array<move> {}
-interface pokemon {
-  id: number;
-  name: string;
-  height: number;
-  moves: moveTypes;
-}
 const PokemonDetail = ({ params }: { params: { id: number } }) => {
   const { id } = params;
   const [pokemon, setPokeMon] = useState<pokemon | undefined>(undefined);

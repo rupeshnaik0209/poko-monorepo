@@ -1,18 +1,12 @@
 "use client";
 import React from "react";
-import PokemonDataGrid, {
-  PokemansType,
-} from "./PokemonDataGrid/PokemonDataGrid";
+import PokemonDataGrid from "./PokemonDataGrid/PokemonDataGrid";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPokemonData } from "./Redux/pokemonSlice";
 import { AppDispatch } from "./Redux/store";
+import { PokemansType } from "./PokemonTypes";
 
-// interface Pokemon {
-//   name: string;
-//   url: string;
-// }
-// interface results extends Array<Pokemon> {}
 interface PokemonResponse {
   results: PokemansType;
 }
